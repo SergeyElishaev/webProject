@@ -7,9 +7,22 @@ import com.google.gson.reflect.TypeToken;
 
 import server.model.User;
 
+
 /**
- * A simple place to hold global application constants
- */
+* <h1>Web Application Constants</h1>
+* This class is simply a String interface use to interact with the user upon wrong input, and other invalid actions
+* <p>
+* It serves no function, but makes the functional classes shorter and easier on the eyes
+* 
+*
+* @author  Sergey
+* @author  Amit
+* @version 1.0
+*/
+
+
+
+
 public interface AppConstants {
 
 	//app constants
