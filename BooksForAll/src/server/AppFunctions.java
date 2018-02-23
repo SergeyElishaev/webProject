@@ -16,10 +16,31 @@ import server.model.ReviewToShow;
 import server.model.User;
 import server.model.UserLite;
 
+
+/**
+* <h1>Application Functions</h1>
+* This class contains all the methods and functions operated by the server
+* 
+* 
+*
+* @author  Sergey
+* @author  Amit
+* @version 1.0
+*/
+
+
+
+
+
 public class AppFunctions {
 
 	private AppFunctions() { }
 	
+	
+	
+	/**
+	* getUserByLogin method returns a User object, or null if an exception is caught.
+	*/
 	public static User getUserByLogin(Connection conn, String username, String password) {
 		User user = null;
 		try {
@@ -53,6 +74,9 @@ public class AppFunctions {
 
 	}
 	
+	/**
+	* getAllUsers method returns a list of Users, or null if an exception is caught.
+	*/
 	public static ArrayList<UserLite> getAllUsers(Connection conn) {
 		ArrayList<UserLite> users = new ArrayList<UserLite>();
 		try {
@@ -81,7 +105,11 @@ public class AppFunctions {
 			return null;
 		}
 	}
-		
+	
+	
+	/**
+	* getAllBooks method returns a list of Books, or null if an exception is caught.
+	*/
 	public static ArrayList<Book> getAllBooks(Connection conn) {
 		ArrayList<Book> books = new ArrayList<Book>();
 		try {
@@ -107,6 +135,10 @@ public class AppFunctions {
 		}
 	}
 	
+	
+	/**
+	* getBooksOfUser method returns a list of Books owned by input user, or null if an exception is caught.
+	*/
 	public static ArrayList<BookOfUser> getBooksOfUser(Connection conn, int userId) {
 		ArrayList<BookOfUser> booksOfUser = new ArrayList<BookOfUser>();
 		
@@ -163,6 +195,11 @@ public class AppFunctions {
 		}
 	}
 	
+	
+	
+	/**
+	* performCloseBook method TODO
+	*/
 	public static void performCloseBook(Connection conn, BookOfUser bof) {
 		try {
 			PreparedStatement prepStmt = conn.prepareStatement(AppConstants.UPDATE_SCROLL_LOCATION);
@@ -183,6 +220,9 @@ public class AppFunctions {
 		}
 	}
 	
+	/**
+	* performUnlikeBook method removes a like from a book
+	*/
 	public static void performUnlikeBook(Connection conn, BookLikedByUser blbu) {
 		try {
 			PreparedStatement prepStmt = conn.prepareStatement(AppConstants.SET_BOOK_OF_USER_AS_UNLIKED);
@@ -203,6 +243,10 @@ public class AppFunctions {
 		}
 	}
 	
+	
+	/**
+	* performLikeBook method adds a like to a book
+	*/
 	public static void performLikeBook(Connection conn, BookLikedByUser blbu) {
 		try {
 			PreparedStatement prepStmt = conn.prepareStatement(AppConstants.SET_BOOK_OF_USER_AS_LIKED);
@@ -223,6 +267,9 @@ public class AppFunctions {
 		}
 	}
 	
+	/**
+	* performReviewBook method returns 'true' if a given book review is legit
+	*/
 	public static boolean performReviewBook(Connection conn, Review review) {
 		boolean result = true;
 		try {
@@ -260,6 +307,9 @@ public class AppFunctions {
 		return result;
 	}
 	
+	/**
+	* isUsernameExist method returns 'true' if a given username is taken
+	*/
 	public static boolean isUsernameExist(Connection conn, String username) {
 		boolean result = false;
 		try {
@@ -279,6 +329,9 @@ public class AppFunctions {
 
 	}
 	
+	/**
+	* registerNewUser method returns 'true' if a new user has been registered successfully.
+	*/
 	public static boolean registerNewUser(Connection conn, User user) {
 		try {
 			PreparedStatement prepStmt = conn.prepareStatement(AppConstants.INSERT_NEW_USER);
