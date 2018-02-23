@@ -198,7 +198,7 @@ public class AppFunctions {
 	
 	
 	/**
-	* performCloseBook method TODO
+	* performCloseBook method is used when a user finishes reading a book, saving scroll location.
 	*/
 	public static void performCloseBook(Connection conn, BookOfUser bof) {
 		try {
