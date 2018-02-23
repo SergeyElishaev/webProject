@@ -1,0 +1,49 @@
+<div class="mybooks-page jumbotron" ng-controller="myBooksController">
+	<div class="container">
+		<h1>My eBooks</h1>
+		<p>Here you can see the books you own</p>
+		
+		<div class="my-books-collection">
+			<p class="warning-message">{{noBooksWarning}}</p>
+			<div ng-repeat="book in books" class="store-book-wrapper">
+				<div class="book-id-{{book.BookId}}">
+					<div class="store-book-title">{{book.Name}}</div>
+					<div class="store-book-image" ng-click="showBookInfo(book)"><img ng-src='{{book.ImageUrl}}' /></div>
+					<div class="store-book-description">{{book.Description}}</div>
+					<div class="store-book-likes"><span class="glyphicon glyphicon-thumbs-up"></span>{{book.Likes}}</div>
+					<div class="store-book-reviews"><span class="glyphicon glyphicon-bookmark"></span>{{book.Reviews}}</div>
+					<div class="store-book-like-button" ng-hide="book.IsLiked"><button class="btn btn-default" ng-click="like(book)"><span class="glyphicon glyphicon-thumbs-up"></span>Like</button></div>
+					<div class="store-book-unlike-button" ng-show="book.IsLiked"><button class="btn btn-default" ng-click="unlike(book)"><span class="glyphicon glyphicon-thumbs-up"></span>Unlike</button></div>
+					<div class="store-book-review-button" ng-hide="book.IsReviewed"><button class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span>Review</button></div>
+					<div class="store-book-review-button" ng-show="book.IsReviewed"><button class="btn btn-default" disabled><span class="glyphicon glyphicon-bookmark"></span>Reviewed</button></div>
+					<div class="store-book-read-button" ng-hide="book.IsOpen"><button class="btn btn-default" ng-click="read(book)">Read</button></div>
+					<div class="store-book-read-button" ng-show="book.IsOpen"><button class="btn btn-default" ng-click="read(book)">Continue reading</button></div>
+				</div>
+			</div>
+		</div>
+		<div class="centering">
+		<div class="mybooks-book-info">
+			<div class="close-book-info-button" ng-click="closeBookInfo()">x</div>
+			<div class="mybooks-book-info-content">
+				<img class="book-info-img" ng-src='{{bookInfo.ImageUrl}}' />
+				<hr />
+				<div class="book-info-existing-reviews" ng-repeat="review in bookInfo.ReviewsList">
+					<span ng-show="{{review.Score>4}}" class="glyphicon glyphicon-star"></span>
+					<span ng-show="{{review.Score>3}}" class="glyphicon glyphicon-star"></span>
+					<span ng-show="{{review.Score>2}}" class="glyphicon glyphicon-star"></span>
+					<span ng-show="{{review.Score>1}}" class="glyphicon glyphicon-star"></span>
+					<span ng-show="{{review.Score>0}}" class="glyphicon glyphicon-star"></span>
+					<p class="book-info-review-content">{{review.Content}}</p>
+					<p class="book-info-review-date">{{review.Date}}</p>
+					<hr />
+				</div>
+				<div class="book-info-write-review-form"></div>
+			</div>
+		</div>
+		</div>
+		<div class="mybooks-reading-window">
+			<div class="close-book-button" ng-click="closeBook()">x</div>
+			<div class="reading-book-content" ng-include="currentBook.Path"></div>
+		</div>
+	</div>
+</div>

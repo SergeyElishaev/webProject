@@ -1,0 +1,29 @@
+<div class="store-page jumbotron" ng-controller="booksController">
+	<div class="container">
+		<h1>eBook Store</h1>
+		<p>Choose the books you wish</p>
+		<div class="store-all-books">
+			<div ng-repeat="book in books" class="store-book-wrapper" ng-click="showBookDetails(book)">
+				<div class="store-book-title">{{book.Name}}</div>
+				<div class="store-book-image"><img ng-src='{{book.ImageUrl}}' /></div>
+				<div class="store-book-description">{{book.Description}}</div>
+				<div class="store-book-likes"><span class="glyphicon glyphicon-thumbs-up"></span>{{book.Likes}}</div>
+				<div class="store-book-reviews"><span class="glyphicon glyphicon-bookmark"></span>{{book.Reviews}}</div>
+				<div class="store-book-price"><span class="glyphicon glyphicon-bitcoin"></span>{{book.Price}}$</div>
+				<div class="store-book-read-button"><button class="btn btn-default" ng-click="buy(book)">Buy</button></div>
+			</div>
+		</div>
+		<div class="book-details-window-wrapper" ng-show="isBookShown">
+			<div class="book-details-window book-title"></div>
+			<div class="book-details-window book-image"></div>
+			<div class="book-details-window book-reviews">
+				<div ng-repeat="review in reviews" class="book-details-single-review">
+					<div class="book-details-single-review-score"></div>
+					<div class="book-details-single-review-content"></div>
+					<div class="book-details-single-review-date"></div>
+					<div class="book-details-single-review-username"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

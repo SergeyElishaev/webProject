@@ -1,0 +1,16 @@
+<div class="admin-page jumbotron" ng-controller="adminController">
+	<div class="container">
+		<h1>Admin Section</h1>
+		<p>Do whatever you want. you are the admin</p>
+		<button class="btn btn-default">Browse Users</button>
+		<button class="btn btn-default" ng-click="setView('view/store.html')">Browse e-Books</button>
+		<button class="btn btn-default">View recent Transactions</button>
+		<button class="btn btn-default">Browse review requests</button>
+		
+		
+		
+		<div class="admin-inner-window list-of-users" ng-show="openUsersList"></div>
+		<div class="admin-inner-window list-of-transactions" ng-show="openTrasactionsList"></div>
+		<div class="admin-inner-window list-of-review-requests" ng-show="openReviewRequestsList"></div>
+	</div>
+</div>

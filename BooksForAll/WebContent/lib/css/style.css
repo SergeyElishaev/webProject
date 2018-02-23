@@ -1,0 +1,146 @@
+
+.glyphicon {
+	padding: 0 5px 0 5px;
+}
+.glyphicon-star{
+    color: #8cad3f;
+}
+.navbar{
+	margin-bottom: 0;
+    z-index: 25;
+}
+.navbar a{
+	cursor: pointer;
+}
+.navbar .nav-el-admin-section{
+	color: #9dd7fb !important;
+}
+
+.warning-message{
+	color: orange;
+}
+.success-message{
+	color: green;
+}
+.reg-form-addr-section{
+	width: 70%;
+	margin: 0 auto;
+}
+
+footer {
+	width: 100%;
+	text-align: center;
+}
+.store-book-wrapper{
+    width: 50%;
+    min-width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    margin-left: -25%;
+    margin-bottom: 20px;
+    background-color: #e6f3ff;
+}
+.store-book-wrapper:hover{
+	background-color: #ffffff;
+	cursor: pointer;
+}
+.store-book-wrapper:active{
+	background-color: #d0e7fd;
+}
+.store-book-title{
+	width: 85%;
+	font-weight: bold;
+	margin: 0 auto;
+}
+.store-book-wrapper img {
+    width: 85%;
+    margin: 0 auto;
+}
+.store-book-description{
+	width: 85%;
+	color: #8a8a8a;
+    font-style: italic;
+    margin: 0 auto;
+}
+.store-book-likes, .store-book-reviews{
+	display: inline;
+}
+.store-book-price{
+	color: green;
+	margin: 0 auto;
+}
+.my-books-collection button{
+	display: grid;
+    width: 45%;
+    margin: 0 auto;
+}
+
+.mybooks-reading-window{
+	display: none;
+    position: fixed;
+    top: 70px;
+    width: 62vw;
+    left: 50%;
+    margin-left: -31vw; /*half of the width*/
+    height: 90%;
+    background-color: #e4e4e4;
+	border: 3px solid black;
+	overflow-y: scroll;
+	z-index: 11;
+}
+.mybooks-reading-window .reading-book-content{
+    padding: 25px 10px 0 10px;
+}
+.mybooks-reading-window .close-book-button, .mybooks-book-info .close-book-info-button {
+	position: fixed;
+    display: inline-block;
+    font-weight: 900;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    background-color: orange;
+    cursor:pointer;
+    z-index: 12;
+}
+.mybooks-reading-window .close-book-button:active{
+	background-color: red;
+}
+.mybooks-book-info{
+	display: none;
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    margin-left: -25vw; /*half of the width*/
+    width: 50vw;
+    height: 85%;
+    background-color: #e4e4e4;
+    border: 3px solid black;
+    overflow-y: scroll;
+    z-index: 11;
+    
+}
+.mybooks-book-info .book-info-img{
+	width: 120px;
+}
+.book-info-review-date{
+	color: #8a8a8a;
+    font-style: italic;
+}
+.mybooks-book-info-content{
+	padding: 25px 10px 0 10px;
+}
+div.mask{
+	display:none;
+	position: fixed;
+	top:0;
+	left:0;
+	background-color: white;	
+	width:100%;
+	height:100%;
+	opacity: 0.8;
+	z-index: 10;
+}
