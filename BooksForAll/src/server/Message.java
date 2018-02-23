@@ -1,6 +1,13 @@
 package server;
 
-
+/**
+* <h1>Message Class</h1>
+* This class serves as a message template for convenience.
+*
+* @author  Sergey
+* @author  Amit
+* @version 1.0
+*/
 public class Message {
 	private Status status;
 	private String details;
